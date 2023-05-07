@@ -18,22 +18,32 @@ sample = [1,2,4]
 #printing Array
 sample
 
-#Accessing the Element
+#Accessing the Element..Random Access ... O(1)
 sample[0]
 
 #iterating the elements
 for i in sample:
     pront i
 
-#Searching the Element
+sample[::1]
+
+#Searching the Element ... is it O(n) in python?
 
 if 20 in sample:
     print("the number is present in the Array")
     
-#Adding Element
+#Adding Element at the end ...O(1)
 sample.append(5)
 
-#Deleting the Element
+#Inserting the element in the order --- 0(n)
+
+#Updating element --- O(1)
+sample[1] = 4
+
+#Popping the element at the end ...O(1)
+sample[-1]
+
+#Deleting the Element ..... is it O(n) in python?
 del sample[0]
 
 #sorting the elements
