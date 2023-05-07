@@ -52,7 +52,7 @@ sorted(sample)
 #revering the String
 firstName[::-1]
 
-#Palindrome example
+#Palindrome example...Time Complexity : O(n)
 #Example to check the output
 #racecar
 #abcba
