@@ -52,4 +52,27 @@ sorted(sample)
 #revering the String
 firstName[::-1]
 
+#Palindrome example
+#Example to check the output
+#racecar
+#abcba
+#abba
+
+def isPalindrome(s:str) -> bool :
+    i=0
+    j=len(s)-1 #Since index follows 0-notation for the first element
+
+    while(i<j):    #We dont need to check for the equal sign...equal sign indicates a case where the letter will be same in either order.
+        if (s[i] != s[j]):
+            flag=False
+            return False
+        i+=1
+        j-=1
+         
+    return True
+
+isPalindrome('racecar')
+
+isPalindrome('check')
+
 
