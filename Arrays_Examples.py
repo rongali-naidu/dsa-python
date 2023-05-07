@@ -8,6 +8,10 @@
 Using List as Array
 """
 
+#initializing the array
+sample = []
+firstName = "Naidu" #its an array. Strings (or String Arrays) are immutable
+
 #Creating Array
 sample = [1,2,4]
 
@@ -31,4 +35,11 @@ sample.append(5)
 
 #Deleting the Element
 del sample[0]
+
+#sorting the elements
+sorted(sample)
+
+#revering the String
+firstName[::-1]
+
 
