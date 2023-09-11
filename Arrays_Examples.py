@@ -75,4 +75,61 @@ isPalindrome('racecar')
 
 isPalindrome('check')
 
+from typing import List
+def sortedSquares(nums:List[int]) -> List[int]:
+    return sorted(map(lambda num:num*num,nums))
+    
+    
+def sortedSquares2(nums:List[int]) -> List[int]:
+    nsnum = []
+    psnum = []
+    snum = []
+    for num in nums:
+        if num<0:
+            nsnum.append(num*num)
+        else :
+            psnum.append(num*num)
+    #merge the two arrays. nsnum merge from the right most number.
+    nlen = len(nsnum)
+    plen = len(psnum)
+    pindx = 0
+    nindx = nlen - 1
+    while (nindx>-1 or pindx < plen):
+        
+        if (pindx >= plen):
+            snum.append(nsnum[nindx])
+            nindx -= 1
+        elif (nindx <= -1):
+            snum.append(psnum[pindx])  
+            pindx += 1
+        elif (nsnum[nindx] < psnum[pindx]):
+            snum.append(nsnum[nindx])
+            nindx -= 1
+        else:
+            snum.append(psnum[pindx])  
+            pindx += 1
+    
+    return snum
+    
+def sortedSquares3(nums:List[int]) -> List[int]:
+    #keep two pointets...one at the left and second one at right
+    #keep populating biggest numbers , next biggest so on
+    lindx = 0
+    nums_length = len(nums)
+    rindx = nums_length-1
+    snum = [0]*nums_length
+    sindx = nums_length-1
+    while (lindx<=rindx):
+        if (nums[lindx]*nums[lindx] > nums[rindx]*nums[rindx]):
+            snum[sindx] = nums[lindx]*nums[lindx]
+            sindx -= 1
+            lindx += 1
+        else:
+            snum[sindx] = nums[rindx]*nums[rindx]
+            sindx -= 1
+            rindx -= 1     
+               
+    return snum
 
+nums = [-4,-1,1,3,10]
+sortedSquares3(nums)
